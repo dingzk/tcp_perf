@@ -1,0 +1,30 @@
+
+net.core.netdev_max_backlog = 16384
+net.ipv4.tcp_max_syn_backlog = 65536
+net.core.somaxconn = 16384
+
+nginx listen backlog = 16384
+
+net.ipv4.tcp_fin_timeout=30
+net.ipv4.ip_local_port_range = 1024     65500
+
+
+net.ipv4.tcp_slow_start_after_idle
+net.ipv4.tcp_max_tw_buckets
+
+net.ipv4.tcp_rmem/wrem
+
+netstat -nat|grep -i time_wait|wc -l
+ss -nat|grep -i time-wait |wc -l 
+
+ss -nat -o state time-wait '( sport = :http )'|wc -l 
+
+ss -nat -o state time-wait '( dport = :http )'|wc -l 
+
+ss -nat -o state fin-wait-2 '( sport = :http )'
+ 
+
+
+
+
+
